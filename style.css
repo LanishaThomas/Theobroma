@@ -1031,13 +1031,16 @@ hr{
 
     /* 2 columns grid */
     #imgg{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        width: 75%;
-        padding: 0 12px;          /* small side space */
-        box-sizing: border-box;   /* padding doesn't reduce column width */
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    width: 75%;          /* size of the white block */
+    margin: 0 auto;      /* equal space on left and right → centered */
+
+    box-sizing: border-box;
+}
+
 
     /* Each product card fills its grid cell */
      .best-img{
@@ -1059,7 +1062,7 @@ hr{
     .best-img h4{
         text-align: center;
         margin-top: 6px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
 /* Footer - stack and center everything */
