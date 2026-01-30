@@ -440,8 +440,8 @@ hr{
  
 }
 #gif{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 50%;
     height: 100%;
     display: flex;
@@ -449,8 +449,8 @@ hr{
     align-items: center;
 }
 #gif img{
-    width: 600px; 
-    height: 500px;
+    width: 500px; 
+    height: 400px;
     margin-top: 20px;
     
 }
@@ -628,7 +628,7 @@ hr{
     color: #a9802A;
     font-size: 40px;
     font-family: overlock;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 #like-description{
     width: 100%;
