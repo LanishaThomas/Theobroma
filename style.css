@@ -948,7 +948,6 @@ hr{
     #gift{
         flex-direction: column;
         height: auto;
-        padding: 20px;
     }
     #gift-head, #gift-img{
         width: 100%;
