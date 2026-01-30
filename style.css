@@ -218,22 +218,25 @@ hr{
     color: black;
     font-size: 20px;
     margin-bottom: 60px;
-}#two{
+}
+#two{
     margin-top: 80px;
-    padding-top: 100px;
-    padding-bottom: 100%;
     margin-bottom: 200px;
 
+    padding-top: 100px;
+    padding-bottom: 100px;
+
     width: 100%;
-    max-width: 500px;   /* controls how wide it can get on big screens */
+    max-width: 500px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: auto;       /* let content define the height */
+    height: auto;
 }
+
 
 #three{
     width: 30%;
@@ -589,6 +592,7 @@ hr{
     padding: 30px;
 }
 #imgg{
+    min-height: 110vh;
     background-color: white;
     display: flex;
     justify-content: center;
