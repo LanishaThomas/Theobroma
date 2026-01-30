@@ -1033,7 +1033,9 @@ hr{
     #imgg{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 10px; 
+    padding-left: 5%;
+    padding-right: 5%;
 
     width: 75%;          /* size of the white block */
     margin: 0 auto;      /* equal space on left and right → centered */
