@@ -996,6 +996,7 @@ hr{
     #tea{
         flex-direction: column;
         padding: 20px;
+        padding-bottom: 80px;
     }
     #gif, #Tea-Time{
         width: 100%;
@@ -1021,38 +1022,109 @@ hr{
         display: none; /* hide floating images on small screens */
     }
 
-    /* Best sellers grid */
-    #imgg{
-        height: auto;
+    /* Let section use full screen width */
+    #best{
+        width: 100%;
         margin: 0;
-    }
-    .best-img{
-        width: 45%;
-        height: auto;
+        padding: 0;
     }
 
-    .best-extra{
-        justify-content: center;
-    }
-    .best-extra img{
-        width: 90%;
+    /* 2 columns grid */
+    #imgg{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 75%;
+        padding: 0 12px;          /* small side space */
+        box-sizing: border-box;   /* padding doesn't reduce column width */
     }
 
-    /* Footer */
-    #footer{
-        flex-direction: column;
-        gap: 30px;
-    }
-    #footer > div{
+    /* Each product card fills its grid cell */
+     .best-img{
         width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
 
-    #footer > div:first-child{
-        align-items: center;
+    /* Product image size */
+    .best-img img{
+        width: 100%;
+        height: auto;      /* increase/decrease as you like */
+        object-fit: cover;  /* keeps image nicely cropped */
+        display: block;
+        border-radius: 6px; /* optional styling */
+    }
+
+    /* Center the text under each image */
+    .best-img h4{
         text-align: center;
+        margin-top: 6px;
+        font-size: 14px;
     }
 
-    #footer > div:last-child input[type="email"]{
-        max-width: 100%;
+/* Footer - stack and center everything */
+#footer{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+/* Each footer column full width but centered content */
+#footer > div{
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Email input should not overflow */
+#footer > div:last-child input[type="email"]{
+    max-width: 100%;
+    width: 100%;
+}
+#footer > div:last-child {
+    width: 30%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+
+#footer > div:last-child p {
+    color: #333;
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.6;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+#footer > div:nth-child(1) {
+    align-items: center;
+    text-align: center;
+}
+#footer > div:nth-child(2) {
+    align-items: center;
+    text-align: center;
+}
+#footer > div:nth-child(3) {
+    align-items: center;
+    text-align: center;
+}
+#like{
+    align-items: center;
+    text-align: center;
+}
+#like-description{
+    align-items: center;
+    text-align: center;
+}
+
+#tea{
+    align-items: center;
+    text-align: center;
     }
+
 }
