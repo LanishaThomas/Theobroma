@@ -591,8 +591,8 @@ hr{
     padding: 30px;
 }
 #imgg{
-    min-height: 150vh;
-    background-color: rgb(236, 38, 38);
+    min-height: 120vh;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
