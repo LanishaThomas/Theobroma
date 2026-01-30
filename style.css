@@ -216,18 +216,22 @@ hr{
     color: black;
     font-size: 20px;
     margin-bottom: 60px;
-}
-#two{
+}#two{
     margin-top: 80px;
     padding-top: 100px;
     margin-bottom: 200px;
-    width: 30%;
-    height: 90%;
+
+    width: 100%;
+    max-width: 500px;   /* controls how wide it can get on big screens */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    height: auto;       /* let content define the height */
 }
+
 #three{
     width: 30%;
     height: 40%;
@@ -582,7 +586,6 @@ hr{
     padding: 30px;
 }
 #imgg{
-    height: 110vh;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -592,11 +595,13 @@ hr{
     margin-right: 100px; 
 }
 .best-img{
-    width: 300px;
+    flex: 1 1 calc(25% - 20px); /* 4 columns target */
+    max-width: calc(25% - 20px);
     height: 300px;
     margin: 10px;
     text-align: center;
 }
+
 .best-img img{
     width: 100%;
     height: 100%;
