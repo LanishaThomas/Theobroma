@@ -903,16 +903,13 @@ hr{
     /* Header */
     #header{
         height: auto;
+        position: relative;
     }
     #nav{
         flex-direction: column;
         height: auto;
         gap: 10px;
         padding: 10px 0;
-    }
-    #logo{
-        width: 140px;
-        height: auto;
     }
     #nav-links{
         width: 100%;
@@ -1131,5 +1128,66 @@ hr{
     align-items: center;
     text-align: center;
     }
+
+    /* one strict horizontal row */
+    #nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;      /* absolutely no second line */
+        height: auto;           /* cancel desktop 10vh */
+        padding: 6px 8px;
+    }
+
+    /* logo small and fixed */
+    #logo{
+        width: 250px;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    #logo img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* kill the middle menu completely */
+    #nav-links{
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    /* search + order stay inline next to logo */
+    #search{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: 8px;
+        flex: 0 0 auto;
+    }
+
+    /* smaller buttons so they fit in one line */
+    #search button{
+        height: 60px;
+        padding: 0 8px;
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    /* hamburger at the far right */
+    #hamburger{
+        margin-left: auto;   /* pushes it to extreme right */
+        font-size: 22px;
+        gap: 100px;
+        cursor: pointer;
+        flex: 0 0 auto;
+        align-items: flex-end;
+        margin-left: auto;  /* push to right edge */
+    padding-left: 60px; /* visual gap from ORDER */
+}
 
 }
