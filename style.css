@@ -283,7 +283,17 @@ hr{
     color: white;
 }
 
+#Know2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
 
+#Know2 a:hover{
+    background: #b68b3a;
+    color: white;
+}
 #content a{
     width: 150px;
     height: 50px;
@@ -368,6 +378,8 @@ hr{
     border: 1px solid #a9802A;
     margin-top: 100px;
 }
+
+
 #gift{
     margin-top: 100px;
     width: 100%;
@@ -458,7 +470,19 @@ hr{
     background-color: #fff3e2;
     height: auto;
     margin-top: 100px;
+    position: relative;   /* important */
+    overflow: hidden;     /* keeps image inside the section */
 }
+
+/* teapot image */
+#tea img.teapot{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px;   /* adjust size as you like */
+    height: auto;
+}
+
 #Tea-Time{
     margin-top: 100px;
     width: 50%;
