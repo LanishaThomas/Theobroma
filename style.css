@@ -187,6 +187,7 @@ hr{
     color: black;
     font-size: 20px;
     margin-top: 25px;
+    margin-bottom: 100px;
 }
 #content2{
     width: 100%;
@@ -214,11 +215,10 @@ hr{
     text-align: center;
     color: black;
     font-size: 20px;
-   
     margin-bottom: 60px;
 }
 #two{
-    margin-top: 60px;
+    margin-top: 80px;
     padding-top: 100px;
     margin-bottom: 200px;
     width: 30%;
@@ -860,113 +860,162 @@ hr{
     margin-top: 20px;
 }
 
-/* Responsive design for footer */
-@media (max-width: 1024px) {
-    #footer {
-        flex-direction: column;
-        gap: 30px;
-        padding: 40px 20px;
-    }
-    
-    #footer > div {
-        width: 100%;
-        align-items: center;
-        text-align: center;
-    }
-    
-    #footer > div:last-child input[type="email"] {
-        max-width: 300px;
-    }
-}
-
 @media (max-width: 768px) {
-    #footer {
-        padding: 30px 15px;
+
+    /* Header */
+    #header{
+        height: auto;
     }
-    
-    #footer > div:nth-child(2),
-    #footer > div:nth-child(3) {
+    #nav{
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    #logo{
+        width: 140px;
+        height: auto;
+    }
+    #nav-links{
+        width: 100%;
+    }
+    #nav-links ul{
+        flex-wrap: wrap;
         gap: 10px;
     }
-    
-    #footer > div:nth-child(2) a,
-    #footer > div:nth-child(3) a {
-        font-size: 13px;
-    }
-    
-    #footer > div:last-child input[type="email"] {
-        max-width: 250px;
-    }
-    
-    #footer > div:last-child p {
-        font-size: 11px;
-    }
-}
-
-@media (max-width: 480px) {
-    #footer > div:last-child input[type="email"] {
-        max-width: 200px;
-    }
-}  
-@media (max-width: 600px) {
-    #hero {
-        height: 40vh;
-        min-height: 180px;
-    }
-}
-
-@media (max-width: 600px) {
-    #header {
-        height: auto;
-    }
-
-    #top {
-        height: auto;
-        padding: 5px 0;
-    }
-
-    #nav {
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    #nav-links {
-        width: 100%;
-    }
-
-
-    #hero {
-        margin-top: 120px; /* approximate header height on mobile */
-    }
-}
-@media (max-width:600px){
     #search{
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    #search button{
-        width: 90%;
-        justify-content: center;
+    /* Hero */
+    #hero{
+        height: 50vh;
+        margin-top: 120px;
     }
-}
 
-@media (max-width:600px){
+    /* Intro content */
+    #content{
+        height: auto;
+        padding: 40px 15px 0 15px;
+    }
+    #head p{
+        width: 90%;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    #content2{
+        flex-direction: column;
+        height: auto;
+    }
+    #one, #two, #three{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 20px 0;
+    }
+    #one p, #three p{
+        width: 80%;
+        font-size: 16px;
+    }
+
+    /* Menu photos */
+    #menu{
+        height: auto;
+    }
+    #photos{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 0;
+    }
+    .photo{
+        width: 45%;
+        height: auto;
+    }
+
+    /* Gift section */
+    #gift{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    #gift-head, #gift-img{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    #gift p{
+        width: 100%;
+        font-size: 16px;
+    }
+    #gift-img img{
+        width: 100%;
+        height: auto;
+    }
+
+    /* Tea time section */
+    #tea{
+        flex-direction: column;
+        padding: 20px;
+    }
+    #gif, #Tea-Time{
+        width: 100%;
+        margin: 0;
+    }
+    #gif img{
+        width: 100%;
+        height: auto;
+    }
+    #Tea-Time p{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* Testimonials */
     #review{
         width: 95%;
     }
-
     .testimonial{
         padding: 0 10px;
     }
-
-    .testimonial p{
-        font-size: 16px;
-    }
-}
-@media (max-width:600px){
     .cupcake{
-        width: 70px;
-        opacity: 0.8;
+        display: none; /* hide floating images on small screens */
+    }
+
+    /* Best sellers grid */
+    #imgg{
+        height: auto;
+        margin: 0;
+    }
+    .best-img{
+        width: 45%;
+        height: auto;
+    }
+
+    .best-extra{
+        justify-content: center;
+    }
+    .best-extra img{
+        width: 90%;
+    }
+
+    /* Footer */
+    #footer{
+        flex-direction: column;
+        gap: 30px;
+    }
+    #footer > div{
+        width: 100% !important;
+    }
+
+    #footer > div:first-child{
+        align-items: center;
+        text-align: center;
+    }
+
+    #footer > div:last-child input[type="email"]{
+        max-width: 100%;
     }
 }
