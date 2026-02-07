@@ -26,12 +26,29 @@ document.addEventListener("DOMContentLoaded", function () {
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
-/* move sidebar to body to escape stacking traps */
-document.body.appendChild(navLinks);
-/* create overlay dynamically — no HTML edit needed */
+/* move sidebar to body ONLY on mobile */
+function placeNavLinks() {
+    if (window.innerWidth <= 768) {
+        if (navLinks.parentNode !== document.body) {
+            document.body.appendChild(navLinks);
+        }
+    } else {
+        const nav = document.getElementById("nav");
+        if (navLinks.parentNode !== nav) {
+            nav.appendChild(navLinks);
+        }
+    }
+}
+
+placeNavLinks();
+window.addEventListener("resize", placeNavLinks);
+
+
+/* create overlay dynamically */
 const overlay = document.createElement("div");
 overlay.id = "overlay";
 document.body.appendChild(overlay);
+
 
 /* helpers */
 function openMenu() {
@@ -44,22 +61,19 @@ function closeMenu() {
     overlay.classList.remove("show");
 }
 
+
 /* toggle */
 hamburger.addEventListener("click", (e) => {
     e.stopPropagation();
     navLinks.classList.contains("show") ? closeMenu() : openMenu();
 });
 
-/* keep clicks inside menu from closing */
 navLinks.addEventListener("click", e => e.stopPropagation());
-
-/* overlay click closes */
 overlay.addEventListener("click", closeMenu);
-
-/* click anywhere else closes */
 document.addEventListener("click", closeMenu);
 
-/* smooth scroll + close */
+
+/* smooth scroll */
 document.querySelectorAll("#nav-links a").forEach(link => {
     link.addEventListener("click", function(e) {
         e.preventDefault();
