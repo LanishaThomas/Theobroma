@@ -78,6 +78,7 @@ hr{
     text-decoration: none;
     color: #a9802A;
     transition: color 0.2s ease;
+    text-size-adjust: 50px;
 }
 #search{
     display: flex;
@@ -1131,66 +1132,148 @@ hr{
     text-align: center;
     }
 
-    /* one strict horizontal row */
-    #nav{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;      /* absolutely no second line */
-        height: auto;           /* cancel desktop 10vh */
-        padding: 6px 8px;
-    }
-
-    /* logo small and fixed */
-    #logo{
-        width: 250px;
-        height: auto;
-        flex: 0 0 auto;
-    }
-
-    #logo img{
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-    }
-
-    /* kill the middle menu completely */
-    #nav-links{
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-    }
-
+    
     /* search + order stay inline next to logo */
     #search{
         display: flex;
-        align-items: center;
+        align-items: right;
         gap: 4px;
         margin-left: 8px;
         flex: 0 0 auto;
     }
 
-    /* smaller buttons so they fit in one line */
-    #search button{
-        height: 60px;
-        padding: 0 8px;
-        font-size: 20px;
-        white-space: nowrap;
+   
+.btn-order {
+    display: none !important; /* hide ORDER ONLINE on mobile */
+}
+
+ /* ===== MOBILE RIGHT SIDEBAR — FORCE OVERRIDE ===== */
+
+#nav-links {
+    position: fixed;
+    top: 0;
+    left: -280px;                 /* off-screen */
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    transition: left 0.35s ease;  /* animation engine */
+    z-index: 9999 !important; /* above everything */
+    padding-top: 80px;
+}
+
+#nav-links.show {
+    left: 0;       
+}
+
+
+
+    #nav-links ul {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;   /* override desktop */
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px 10px;
+        margin: 0;
+        list-style: none;
     }
 
-    /* hamburger at the far right */
-    #hamburger{
-        display: flex !important;
-        margin-left: auto;   /* pushes it to extreme right */
-        font-size: 22px;
-        gap: 100px;
-        cursor: pointer;
-        flex: 0 0 auto;
-        align-items: flex-end;
-        margin-left: auto;  /* push to right edge */
-    padding-left: 60px; /* visual gap from ORDER */
+    #nav-links li {
+        margin-top: 80px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav-links a {
+        margin-top: 50px;
+        display: block;
+        padding: 6px 4px;   /* ← THIS controls row height */
+        line-height: 1.1;
+        font-size: 14px;    /* optional tighter look */
+    }
+
+        /* hamburger at the far right */
+    /* NAV CONTAINER */
+/* NAV BAR — FORCE HORIZONTAL */
+#nav {
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;        /* critical */
+    align-items: center;
+    flex-wrap: nowrap;          /* prevent vertical stacking */
+    padding: 8px 12px;
 }
 
+/* LEFT — hamburger */
+#hamburger {
+    position: relative !important;
+    right: auto !important;
+    left: auto !important;
+    display: block !important;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1000;
 }
+
+
+/* CENTER — logo */
+#logo {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#logo img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+/* RIGHT — search */
+#search {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* search icon button */
+.btn-search {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hide label text */
+.btn-search .label {
+    display: none;
+}
+
+/* remove order button */
+.btn-order {
+    display: none !important;
+}
+
+/* hide search text */
+.btn-search .label {
+    display: none;
+}
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 8000 !important;   /* LOWER than dashboard */
+}
+
+#overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+}
+
