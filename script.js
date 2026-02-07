@@ -82,3 +82,48 @@ document.querySelectorAll("#nav-links a").forEach(link => {
         closeMenu();
     });
 });
+
+
+/* store last visited section */
+document.querySelectorAll("a[href^='#']").forEach(link => {
+    link.addEventListener("click", function () {
+        const id = this.getAttribute("href");
+        if (id && id.length > 1) {
+            localStorage.setItem("lastSection", id);
+        }
+    });
+});
+
+/* restore scroll on reload */
+window.addEventListener("load", () => {
+    const last = localStorage.getItem("lastSection");
+    if (last) {
+        const el = document.querySelector(last);
+        if (el) {
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: "smooth" });
+            }, 200);
+        }
+    }
+});
+
+/* visit counter */
+let visits = localStorage.getItem("visitCount");
+visits = visits ? parseInt(visits) + 1 : 1;
+localStorage.setItem("visitCount", visits);
+
+/* create floating badge — no HTML edit needed */
+const badge = document.createElement("div");
+badge.textContent = `Visits: ${visits}`;
+badge.style.position = "fixed";
+badge.style.bottom = "12px";
+badge.style.right = "12px";
+badge.style.background = "#000";
+badge.style.color = "#fff";
+badge.style.padding = "6px 10px";
+badge.style.borderRadius = "8px";
+badge.style.fontSize = "12px";
+badge.style.zIndex = "20000";
+
+document.body.appendChild(badge);
+

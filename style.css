@@ -906,7 +906,7 @@ hr{
     /* Header */
     #header{
         height: auto;
-        position: relative;
+        position: fixed;
     }
     #nav{
         flex-direction: column;
@@ -1172,7 +1172,7 @@ hr{
         margin-top: 80px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;   /* override desktop */
+        justify-content: flex-start;  
         align-items: flex-start;
         gap: 4px;
         padding: 8px 10px;
