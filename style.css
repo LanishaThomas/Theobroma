@@ -1159,6 +1159,7 @@ hr{
     transition: left 0.35s ease;  /* animation engine */
     z-index: 9999 !important; /* above everything */
     padding-top: 80px;
+
 }
 
 #nav-links.show {
@@ -1264,7 +1265,7 @@ hr{
 #overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.60);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
