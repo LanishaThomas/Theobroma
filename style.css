@@ -618,7 +618,7 @@ hr{
     padding: 30px;
 }
 #imgg{
-    min-height: 120vh;
+    min-height: 110vh;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -633,19 +633,62 @@ hr{
     height: 300px;
     margin: 10px;
     text-align: center;
+    position: relative;
 }
 
 .best-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
-.best-img h4{
-    margin-top: 10px;
-    font-size: 23px;
+.best-img .img1 {
+    position: relative;
+    z-index: 1;
+}
+
+.best-img .img2 {
+    position: absolute;
+    inset: 0;
+     z-index: 2;
+    transition: opacity 0.35s ease;
+    opacity: 0;
+}
+
+
+/* white translucent overlay */
+.best-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.45);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* hover behavior */
+.best-img:hover .img2 {
+    opacity: 1;
+}
+
+
+.best-img:hover::after {
+    opacity: 1;
+}
+
+.best-img h4 {
+    position: relative;
+    z-index: 5;          /* above overlay + images */
+    margin-top: 30px;
+    font-size: 25px;
     color: #a9802A;
     padding-bottom: 20px;
 }
+
 #like{
     width: 100%;
     height: 10vh;
@@ -1053,6 +1096,7 @@ hr{
 
     /* Product image size */
     .best-img img{
+        margin-top: 25px;
         width: 100%;
         height: auto;      /* increase/decrease as you like */
         object-fit: cover;  /* keeps image nicely cropped */
