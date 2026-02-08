@@ -627,7 +627,8 @@ hr{
     padding: 30px;
 }
 #imgg{
-    min-height: 110vh;
+    padding-bottom: 40px;
+    padding-top: 20px;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -640,7 +641,9 @@ hr{
     flex: 1 1 calc(25% - 20px); /* 4 columns target */
     max-width: calc(25% - 20px);
     height: 300px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 60px;
     text-align: center;
     position: relative;
 }
