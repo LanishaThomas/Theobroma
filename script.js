@@ -127,3 +127,36 @@ badge.style.zIndex = "20000";
 
 document.body.appendChild(badge);
 
+const emailInput = document.getElementById("gmail");
+
+/* find the SIGN UP link next to the input */
+const signupBtn = emailInput.parentNode.querySelector("a");
+
+signupBtn.addEventListener("click", function (e) {
+    e.preventDefault();   // stops jump to top
+
+    const email = emailInput.value.trim();
+
+    if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        return;
+    }
+
+    /* store email */
+    localStorage.setItem("subscriberEmail", email);
+
+    /* hide elements */
+    emailInput.style.display = "none";
+    signupBtn.style.display = "none";
+
+    const label = document.querySelector("label[for='gmail']");
+    if (label) label.style.display = "none";
+
+    /* show thank-you message */
+    const msg = document.createElement("div");
+    msg.textContent = "Thank you for subscribing!";
+    msg.style.fontWeight = "600";
+    msg.style.marginTop = "8px";
+
+    emailInput.replaceWith(msg);
+});
