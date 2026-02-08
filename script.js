@@ -178,3 +178,43 @@ signupBtn.addEventListener("click", function (e) {
 
     emailInput.replaceWith(msg);
 });
+
+const signupBox = document.getElementById("gmail").parentNode;
+const infoParas = signupBox.querySelectorAll("p");
+
+/* wrap paragraphs */
+const wrapper = document.createElement("div");
+wrapper.className = "slide-hidden";
+infoParas.forEach(p => wrapper.appendChild(p));
+signupBox.appendChild(wrapper);
+
+/* create styled toggle button with icon */
+const toggleBtn = document.createElement("button");
+toggleBtn.className = "branch-toggle-btn";
+toggleBtn.innerHTML = '<i class="fa-solid fa-eye"></i> View Our Branches';
+
+signupBox.insertBefore(toggleBtn, wrapper);
+
+let open = false;
+
+toggleBtn.addEventListener("click", () => {
+    open = !open;
+
+    if (open) {
+        wrapper.classList.remove("slide-hidden");
+        wrapper.classList.add("slide-open");
+        toggleBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Branches';
+        toggleBtn.style.background = "#28a745";
+toggleBtn.style.border = "none";
+toggleBtn.style.color = "#fff";
+
+    } else {
+        wrapper.classList.remove("slide-open");
+        wrapper.classList.add("slide-hidden");
+        toggleBtn.innerHTML = '<i class="fa-solid fa-eye"></i> View Our Branches';
+        toggleBtn.style.background = "#28a745";
+toggleBtn.style.border = "none";
+toggleBtn.style.color = "#fff";
+
+    }
+});
