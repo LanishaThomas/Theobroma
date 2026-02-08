@@ -128,35 +128,53 @@ badge.style.zIndex = "20000";
 document.body.appendChild(badge);
 
 const emailInput = document.getElementById("gmail");
-
-/* find the SIGN UP link next to the input */
 const signupBtn = emailInput.parentNode.querySelector("a");
 
+function shakeInput() {
+    emailInput.classList.remove("input-shake");
+    void emailInput.offsetWidth;
+    emailInput.classList.add("input-shake");
+}
+
+/* clear custom error when user types */
+emailInput.addEventListener("input", () => {
+    emailInput.setCustomValidity("");
+});
+
 signupBtn.addEventListener("click", function (e) {
-    e.preventDefault();   // stops jump to top
+    e.preventDefault();
 
     const email = emailInput.value.trim();
 
-    if (!emailInput.checkValidity()) {
+    /* ALWAYS clear first */
+    emailInput.setCustomValidity("");
+
+    /* empty check */
+    if (email === "") {
+        emailInput.setCustomValidity("Enter email");
         emailInput.reportValidity();
+        shakeInput();
         return;
     }
 
-    /* store email */
-    localStorage.setItem("subscriberEmail", email);
+    /* format check */
+    if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        shakeInput();
+        return;
+    }
 
-    /* hide elements */
-    emailInput.style.display = "none";
-    signupBtn.style.display = "none";
+    /* valid → success */
+    localStorage.setItem("subscriberEmail", email);
 
     const label = document.querySelector("label[for='gmail']");
     if (label) label.style.display = "none";
+    signupBtn.style.display = "none";
 
-    /* show thank-you message */
     const msg = document.createElement("div");
     msg.textContent = "Thank you for subscribing!";
     msg.style.fontWeight = "600";
-    msg.style.marginTop = "8px";
+    msg.style.padding = "10px 0";
 
     emailInput.replaceWith(msg);
 });
