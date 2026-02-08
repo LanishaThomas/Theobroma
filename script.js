@@ -212,3 +212,20 @@ toggleBtn.addEventListener("click", () => {
     }
 });
 
+const moreBtn = document.getElementById("viewMoreBtn");
+const lessBtn = document.getElementById("viewLessBtn");
+const extraPhotos = document.querySelectorAll("#photos .photo:nth-child(n+5)");
+
+moreBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    extraPhotos.forEach(el => el.style.display = "flex");
+    moreBtn.style.display = "none";
+    lessBtn.style.display = "inline";
+});
+
+lessBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    extraPhotos.forEach(el => el.style.display = "none");
+    lessBtn.style.display = "none";
+    moreBtn.style.display = "inline";
+});
