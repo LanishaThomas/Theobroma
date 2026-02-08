@@ -683,8 +683,8 @@ hr{
 .best-img h4 {
     position: relative;
     z-index: 5;          /* above overlay + images */
-    margin-top: 30px;
-    font-size: 25px;
+    margin-top: 18px;
+    font-size: 23px;
     color: #a9802A;
     padding-bottom: 20px;
 }
@@ -847,7 +847,14 @@ hr{
   display: flex;
   align-items: center;
   gap: 10px;
+ transition: color 0.25s ease;
 }
+
+/* hover → golden yellow */
+.contact-item:hover {
+  color: #d4af37;   /* golden yellow */
+}
+
 
 .contact-item i {
   font-size: 16px;
