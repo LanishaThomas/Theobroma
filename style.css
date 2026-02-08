@@ -1133,15 +1133,12 @@ hr{
     gap: 10px; 
     padding-left: 5%;
     padding-right: 5%;
-
     width: 75%;          /* size of the white block */
     margin: 0 auto;      /* equal space on left and right → centered */
-
     box-sizing: border-box;
+    margin-bottom: 60px;
 }
-
-
-    /* Each product card fills its grid cell */
+/* Each product card fills its grid cell */
      .best-img{
         width: 100% !important;
         max-width: 100% !important;
