@@ -14,7 +14,6 @@ html, body {
 }
 #main{
     width: 100%;
-    height: 100vh;
     background-color: white;
 }
 #header {
@@ -170,7 +169,7 @@ hr{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 150px;
+    padding-top: 250px;
 } 
 #content #head{
     width: 100%;
@@ -263,6 +262,7 @@ hr{
     margin-bottom: 60px;
 }
 #Know{
+    padding-top: 150px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -298,6 +298,30 @@ hr{
     background: #b68b3a;
     color: white;
 }
+#Know3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+#Know3 a{
+    padding: 12px 28px;
+    border: 2px solid #b68b3a;
+    border-radius: 25px;
+    color: #b68b3a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+    background-color: #b2ddd3;
+    font-size: 12px;
+
+}
+
+#Know3 a:hover{
+    background: #b68b3a;
+    color: white;
+}
 #content a{
     width: 150px;
     height: 50px;
@@ -329,14 +353,14 @@ hr{
     align-items: center;
     padding: 40px 0px;
 }
-#photos{
+#photos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 per row */
-    gap: 20px; /* spacing between photos */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
     width: 85%;
-    margin: 0 auto;   /* center horizontally */
+    margin: 0 auto;
     background-color: white;
-    justify-items: center; /* center each photo in its grid cell */
+    justify-items: center;
 }
 
 .photo{
@@ -627,7 +651,7 @@ hr{
     padding: 30px;
 }
 #imgg{
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     padding-top: 20px;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -635,7 +659,8 @@ hr{
     align-items: center;
     flex-wrap: wrap;
     margin-left: 100px;
-    margin-right: 100px; 
+    margin-right: 100px;
+    margin-bottom: 100px; 
 }
 .best-img{
     flex: 1 1 calc(25% - 20px); /* 4 columns target */
@@ -643,7 +668,7 @@ hr{
     height: 300px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     text-align: center;
     position: relative;
 }
@@ -663,7 +688,7 @@ hr{
 .best-img .img2 {
     position: absolute;
     inset: 0;
-     z-index: 2;
+    z-index: 2;
     transition: opacity 0.35s ease;
     opacity: 0;
 }
@@ -696,6 +721,7 @@ hr{
     position: relative;
     z-index: 5;          /* above overlay + images */
     margin-top: 18px;
+    margin-bottom: 20px;
     font-size: 23px;
     color: #a9802A;
     padding-bottom: 20px;
@@ -992,6 +1018,10 @@ hr{
     #hero{
         height: 50vh;
         margin-top: 120px;
+        margin-bottom: 120px;
+    }
+    #Know{
+        padding-top: 1px;
     }
 
     /* Intro content */
